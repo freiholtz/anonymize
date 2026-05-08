@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+
+# Editor / agent state
+.claude/
+.claude-session
+.cursor/
+.idea/
+.vscode/
+AGENTS.md
+CLAUDE.md
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local-only artifacts
+scheduled_tasks.lock
+infographics_flyer/
