@@ -145,6 +145,17 @@ while pass-through items survive.
 - **macOS clipboard read** (`pbpaste`) is macOS-specific. On Linux/Windows,
   pipe stdin instead.
 
+## Companion: PII-safe Django shell snippets
+
+For the *preventive* counterpart to this scrubber, see
+[`anonymize_django_shell_snippets.md`](anonymize_django_shell_snippets.md).
+It documents a pattern for writing Django shell investigation snippets that
+mask names, emails, phones, government IDs, and tokens at the `print()`
+boundary — so PII never leaves the database row in unmasked form. Useful
+when the data is still in the DB and you control the script. The text
+scrubber in this repo handles the inverse case: raw text that already
+exists and needs cleaning before you share it.
+
 ## License
 
 [MIT](LICENSE).
