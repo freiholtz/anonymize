@@ -6,9 +6,24 @@ for the moment before you share something with a chatbot, a coworker, or a
 public issue tracker.
 
 ```bash
-echo "Reach Jane Doe at jane.doe@example.com or 555-123-4567" | anonymize
-# Reach Jane Doe at jan***@example.com or ***-***-4567
+echo "Reach Jane Bartholomew at jane@example.com or 555-123-4567" | anonymize
+# Reach Jane B***w at jan***@example.com or ***-***-4567
 ```
+
+> ⚠️ **Verify before you trust it.** PII detection is best-effort and the
+> right policy depends on YOUR data. Open `validation/dummy.md`, replace
+> the synthetic content with examples that look like the data you actually
+> handle (real-shaped names, addresses, ids, phone formats, ticket prose),
+> then run:
+>
+> ```bash
+> cat validation/dummy.md | uv run anonymize.py > validation/dummy_anonymized.md
+> ```
+>
+> Diff the two files and confirm every field you care about is masked the
+> way you need. If something leaks, edit the recognizers in `anonymize.py`,
+> add a fixture row that catches the regression, and rerun. Treat the
+> fixture as the ground truth for "what this install masks for me".
 
 ## Install
 
